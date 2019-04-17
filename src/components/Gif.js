@@ -53,7 +53,7 @@ class Gif extends Component {
               <h3 className='title'>{gif.title}</h3>
               <div className='detail'>posted by: {gif.username ? gif.username : 'unknown'}</div>
               <div className='detail'>content rating: {gif.rating ? gif.rating : 'unknown'}</div>
-              <a  className='detail-link' href={gif.source}>link to source</a>
+              <a  className='detail-link' href={gif.source ? gif.source : gif.url}>link to source</a>
             </div>
           ) :  (
             <>
@@ -98,5 +98,6 @@ list. While gifs can be favorited and unfavorited on any page, the application
 doesn't currently update the favorites view when a gif is unfavorited from there.
 
 I used progressive loading for the gifs so their original-sized still appears
-while the rest of the gif is loading. 
+while the rest of the gif is loading. Clicking on a gif will toggle between 
+displaying the gif or its details (username, title, rating, source)
 */
