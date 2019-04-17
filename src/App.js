@@ -7,7 +7,6 @@ import Random from './views/Random'
 import Favorites from './views/Favorites'
 
 class App extends Component {
-
   render() {
     return (
       <div className='app'>
@@ -24,7 +23,7 @@ class App extends Component {
         <Route exact path='/trending' component={Trending} />
         <Route path='/search' component={Search} />
         <Route path='/random' component={Random} />
-        {/* <Route path='/favorites' component={Favorites} /> */}
+        <Route path='/favorites' component={Favorites} />
       </div>
     )
   }
