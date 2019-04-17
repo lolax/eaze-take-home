@@ -63,3 +63,21 @@ class Gif extends Component {
 }
   
 export default Gif
+
+/* 
+The gif component is the essence of gifhub, where the true treasure lies.
+These components were originally functional components, but I upgraded them
+to class components in order to implement the favoriting functionality.
+
+When a gif is favorited, the state is toggled so that the heart color updates
+and the favorite object in local storage can update accordingly. When a gif is
+favorited, it retrieves the item 'favs' from local storage and parses the JSON.
+It then adds the new gif to the favs object with the gif id as the key and the
+whole Gif Object as the value. Then it restringifies the JSON and puts it back 
+into local storage. Similarly, if a gif is unfavorited, it removes it from this
+list. While gifs can be favorited and unfavorited on any page, the application
+doesn't currently update the favorites view when a gif is unfavorited from there.
+
+I used progressive loading for the gifs so their original-sized still appears
+while the rest of the gif is loading. 
+*/

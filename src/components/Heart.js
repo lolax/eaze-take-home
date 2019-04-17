@@ -23,3 +23,9 @@ const HeartButton = ({liked, favGif}) => (
 )
 
 export default HeartButton;
+
+/* 
+The heart button is an svg that signals to Gif to call the method favGif
+when it is clicked. It changes fill color based on whether the gif is currently
+liked or not.
+*/

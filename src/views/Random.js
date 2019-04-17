@@ -39,3 +39,9 @@ class Random extends Component {
 }
 
 export default Random
+
+/* 
+The random view renders a single gif returned by the /random endpoint of the api. 
+I added a button to fetch a new random gif so that the fun is endless 
+(until the rate limit is reached).
+*/

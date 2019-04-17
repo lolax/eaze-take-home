@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import GifList from '../components/GifList'
 import axios from 'axios'
 
-
 class Search extends Component {
   constructor(props) {
     super(props)
@@ -11,7 +10,8 @@ class Search extends Component {
     this.state = {
       gifs: [],
       search: '',
-      searchEntered: false
+      searchEntered: false,
+      message: ''
     }
   }
 
@@ -24,7 +24,7 @@ class Search extends Component {
     axios
       .get(`${this.host}${this.pathSearch}?q=${this.state.search}&api_key=${process.env.REACT_APP_KEY}`)
       .then(res => this.setState({ gifs: res.data.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ message: err.message }))
   }
 
   changeHandler = event => {
@@ -51,9 +51,18 @@ class Search extends Component {
         {this.state.gifs.length < 1 && this.state.searchEntered && (
           <div className='message'>No gifs found, try another search!</div>
         )}
+        <div className='message'>{this.state.message}</div>
       </div>
     )
   }
 }
 
 export default Search
+
+/* 
+The search view renders a gif list populated by the response from
+the /search endpoint of the api. It automatically formats search inputs
+to be accepted by the endpoint parameters. The boolean "searchEntered"
+on state so that an error message will be displayed if a search was attempted
+and no gifs were returned. 
+*/

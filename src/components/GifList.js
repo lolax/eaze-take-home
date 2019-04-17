@@ -17,3 +17,12 @@ const GifList = ({ gifs }) => (
 );
 
 export default GifList;
+
+/* 
+The gif list component (used in favorites, search, and trending) is primarily
+responsible for dividing all of the gifs it has received as props into chunks.
+This is the key to the mosaic box-packing styles; each chunk is one column in the list.
+I added Math.ceil on the length parameter to ensure that any fractions are rounded to whole
+integers. It would be nice if the number of columns was relative to the viewport width,
+but for now, it's either 4 columns or 1 column (below 750px).
+*/
