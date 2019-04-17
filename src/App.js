@@ -1,31 +1,30 @@
 import React, { Component } from 'react'
+import { Route, Link } from 'react-router-dom'
 import './App.css'
-import axios from 'axios'
-import TrendingList from './components/TrendingList'
-
+import Trending from './views/Trending'
+import Search from './views/Search'
+import Random from './views/Random'
+import Favorites from './views/Favorites'
 
 class App extends Component {
-  constructor() {
-    super()
-    this.host       = 'http://api.giphy.com'
-    this.pathTrend  = '/v1/gifs/trending'
-    this.state = {
-      trending: []
-    }
-  }
-
-  componentDidMount() {
-    axios
-      .get(`${this.host}${this.pathTrend}?api_key=${process.env.REACT_APP_KEY}`)
-      .then(res => this.setState({ trending: res.data.data }))
-      .catch(err => console.log(err))
-  }
 
   render() {
     return (
-      <div className="app">
-        <div>welcome to gifhub</div>
-        <TrendingList trending={this.state.trending}/>
+      <div className='app'>
+        <header className='header'>
+          <h1 className='welcome'>welcome to gifhub</h1>
+          <nav className='nav'>
+            <Link className='nav-link' to='/favorites'>Favorites</Link>
+            <Link className='nav-link' to='/random'>Random</Link>
+            <Link className='nav-link' to='/search'>Search</Link>
+            <Link className='nav-link' to='/trending'>Trending</Link>
+          </nav>
+        </header>
+        <Route exact path='/' component={Trending} />
+        <Route exact path='/trending' component={Trending} />
+        <Route path='/search' component={Search} />
+        <Route path='/random' component={Random} />
+        {/* <Route path='/favorites' component={Favorites} /> */}
       </div>
     )
   }
