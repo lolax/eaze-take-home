@@ -6,7 +6,7 @@ import axios from 'axios'
 class Search extends Component {
   constructor(props) {
     super(props)
-    this.host       = 'http://api.giphy.com'
+    this.host       = 'https://api.giphy.com'
     this.pathSearch = '/v1/gifs/search'
     this.state = {
       gifs: [],

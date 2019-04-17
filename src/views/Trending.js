@@ -5,7 +5,7 @@ import axios from 'axios'
 class Trending extends Component {
   constructor(props) {
     super(props)
-    this.host       = 'http://api.giphy.com'
+    this.host       = 'https://api.giphy.com'
     this.pathTrend  = '/v1/gifs/trending'
     this.state = {
       gifs: []
