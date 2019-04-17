@@ -9,8 +9,8 @@ const HeartButton = ({liked, favGif}) => (
       width="40"
       height="40"
       viewBox="0 0 24 24"
-      stroke={liked ? '#ff3144' : 'rgb(18, 18, 18)'}
-      strokeWidth="1"
+      stroke='rgb(18, 18, 18)'
+      strokeWidth="1.25"
       strokeLinecap="round"
       strokeLinejoin="round"
       cursor='pointer'
