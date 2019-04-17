@@ -6,7 +6,8 @@ class Gif extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      liked: false
+      liked: false,
+      details: false
     }
   }
 
@@ -39,24 +40,42 @@ class Gif extends Component {
     this.setState({ liked: !this.state.liked }, this.updateFavs)
   }
 
+  toggleDetails = () => {
+    this.setState({ details: !this.state.details })
+  }
+
   render() {
+    const { gif } = this.props
     return (
-      <div className='gif-container'>
-        <HeartButton 
-          liked={this.state.liked} 
-          favGif={this.favGif} 
-        />
-        <ProgressiveImage 
-          src={this.props.gif.images.original.url} 
-          placeholder={this.props.gif.images.original_still.url}>
-          {src => (
-            <img
-              className='gif' 
-              src={src} 
-              alt={this.props.gif.title}
-            />
-          )}
-        </ProgressiveImage>
+      <div className='gif-container' >
+        {this.state.details ? (
+            <div className='details' onClick={this.toggleDetails}>
+              <h3 className='title'>{gif.title}</h3>
+              <div className='detail'>posted by: {gif.username ? gif.username : 'unknown'}</div>
+              <div className='detail'>content rating: {gif.rating ? gif.rating : 'unknown'}</div>
+              <a  className='detail-link' href={gif.source}>link to source</a>
+            </div>
+          ) :  (
+            <>
+              <HeartButton 
+              liked={this.state.liked} 
+              favGif={this.favGif} 
+              />
+              <ProgressiveImage 
+                src={gif.images.original.url} 
+                placeholder={gif.images.original_still.url}>
+                {src => (
+                  <img
+                    className='gif' 
+                    src={src} 
+                    alt={gif.title}
+                    onClick={this.toggleDetails}
+                  />
+                )}
+              </ProgressiveImage>
+            </>
+          ) 
+        }
       </div>
     )
   }
