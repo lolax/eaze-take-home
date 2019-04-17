@@ -13,10 +13,10 @@ class App extends Component {
         <header className='header'>
           <h1 className='welcome'>welcome to gifhub</h1>
           <nav className='nav'>
+            <Link className='nav-link' to='/trending'>Trending</Link>
             <Link className='nav-link' to='/favorites'>Favorites</Link>
             <Link className='nav-link' to='/random'>Random</Link>
             <Link className='nav-link' to='/search'>Search</Link>
-            <Link className='nav-link' to='/trending'>Trending</Link>
           </nav>
         </header>
         <Route exact path='/' component={Trending} />
@@ -30,3 +30,8 @@ class App extends Component {
 }
 
 export default App
+
+/* 
+App contains the nav bar and routes for each of the pages, 
+which map to class components in the /views directory
+*/
