@@ -37,7 +37,6 @@
 }
 
 .gif {
-  margin: 0.5rem 0.5rem;
   width: 100%;
 }
 
@@ -45,7 +44,7 @@
   position: relative;
   width: calc(100% - 1rem);
   max-width: 70rem;
-  margin: 0 auto;
+  margin: 0.5rem auto;
 }
 
 .heart-container {
