@@ -8,8 +8,7 @@ class Trending extends Component {
     this.host       = 'http://api.giphy.com'
     this.pathTrend  = '/v1/gifs/trending'
     this.state = {
-      gifs: [],
-      search: ''
+      gifs: []
     }
   }
 
