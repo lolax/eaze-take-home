@@ -21,7 +21,7 @@ Completed:
 Started:
 - When the user scrolls the page to the bottom, load new GIFs automatically.
 
-
+Remaining:
 - Show off your animation skills!
 - Sort the results by uploaded time and let the user choose if they prefer ascending or descending ordering.
 - Provide the ultimate user experience: scrolling, searching, fetching… could be optimized for UX.
