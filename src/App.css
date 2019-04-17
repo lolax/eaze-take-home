@@ -42,6 +42,14 @@
   max-width: 70rem;
 }
 
+.gif-container {
+  position: relative;
+}
+.heart-container {
+  position: absolute;
+  padding: 1rem;
+}
+
 .chunk {
   display: flex;
   align-items: flex-start;
