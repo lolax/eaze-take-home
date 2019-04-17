@@ -28,7 +28,7 @@ class Trending extends Component {
   //     axios
   //       .get(`${this.host}${this.pathTrend}?api_key=${process.env.REACT_APP_KEY}&offset=${this.state.page + 25}`)
   //       .then(res => this.setState({ gifs: [...this.state.gifs, ...res.data.data], page: this.state.page + 25 }))
-  //       .catch(err => console.log(err))
+  //       .catch(err => this.setState({ message: err.message }))
   //   }
   // }
 

@@ -9,7 +9,8 @@ class Random extends Component {
     this.pathRandom  = '/v1/gifs/random'
     this.state = {
       gif: false,
-      search: ''
+      search: '',
+      message: ''
     }
   }
 
@@ -21,7 +22,7 @@ class Random extends Component {
     axios
       .get(`${this.host}${this.pathRandom}?api_key=${process.env.REACT_APP_KEY}`)
       .then(res => this.setState({ gif: res.data.data }))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ message: `There was an error: ${err.message}. It's likely that the api rate limit has been reached. I'm working on it :)` }))
   }
 
   render() {
@@ -33,6 +34,7 @@ class Random extends Component {
         ) : (
           <div className='message'>Loading...</div>
         )}
+        <div className='message'>{this.state.message}</div>
       </div>
     )
   }

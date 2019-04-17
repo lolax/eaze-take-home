@@ -31,7 +31,7 @@ class Gif extends Component {
       localStorage.setItem('favs', JSON.stringify(favGifs))
     } else {
       favGifs = {}
-      this.state.liked ? favGifs[gif.id] = gif : console.log("ruh roh")
+      if (this.state.liked) favGifs[gif.id] = gif
       localStorage.setItem('favs', JSON.stringify(favGifs))
     }
   }
