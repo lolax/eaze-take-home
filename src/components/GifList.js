@@ -10,7 +10,7 @@ const createChunk = (arr, size) => (
 
 const GifList = ({ gifs }) => (
   <div className='gif-list'>
-    {createChunk(gifs, gifs.length / 4).map((chunk, i) => (
+    {createChunk(gifs, Math.ceil(gifs.length / 4)).map((chunk, i) => (
       <GifChunk chunk={chunk} key={i} />
     ))}
   </div>
