@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className='app'>
         <header className='header'>
-          <h1 className='welcome'>welcome to gifhub</h1>
+          <h1 className='welcome'>GifHub</h1>
           <nav className='nav'>
             <Link className='nav-link' to='/trending'>Trending</Link>
             <Link className='nav-link' to='/favorites'>Favorites</Link>
