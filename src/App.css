@@ -3,7 +3,7 @@
 }
 
 .welcome {
-  font-size: 2rem;
+  font-size: 2.8rem;
   padding-top: 5rem;
   margin: 0;
   color: white;
@@ -38,6 +38,7 @@
 
 .gif {
   width: 100%;
+  cursor: pointer;
 }
 
 .gif-container {
@@ -72,7 +73,7 @@
   text-decoration: none;
   color: black;
   padding: 2px;
-  width: 12rem;
+  width: 14rem;
 }
 
 .heart-container {
@@ -118,7 +119,7 @@
   color: white;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   .gif-list {
     flex-direction: column;
   }
@@ -146,6 +147,7 @@
 
   .search-bar {
     width: 80%;
+    margin: 1rem;
   }
   
   .button {
