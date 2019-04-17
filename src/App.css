@@ -63,7 +63,7 @@
 }
 
 .title {
-   font-size: 2.2rem;
+   ont-size: 2.2rem;
 }
 
 .detail-link {
@@ -122,21 +122,33 @@
   .gif-list {
     flex-direction: column;
   }
+
   .chunk {
     width: calc(100% - 1rem);
     align-items: center;
     margin: auto;
   }
+
   .welcome {
     padding: 2rem 0 0;
   }
+
   .nav {
     flex-direction: column;
     align-items: center;
     padding: 0.5rem;
   }
+
   .nav-link {
     margin: 1rem;
     width: 40%;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+  
+  .button {
+    width: 90%
   }
 }
